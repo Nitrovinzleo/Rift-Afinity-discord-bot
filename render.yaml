@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: rift-affinity-discord-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: API_URL
+        sync: false
+      - key: RIOT_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
